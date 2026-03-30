@@ -3,15 +3,19 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const app = express();
 app.use(express.json());
 app.use(cors());
 
+const PORT = process.env.PORT || 3000;
+
 const SECRET = "secret123";
 
 // 🔗 MongoDB
-mongoose.connect("mongodb+srv://jvmadarshkumar_db_user:dM6QLcwYcXNx5LDS@cluster0.lhbez9b.mongodb.net/marketDB")
+mongoose.connect(process.env.MONGO_URL)
   .then(() => console.log("MongoDB Connected"))
   .catch(err => console.log(err));
 
@@ -138,4 +142,4 @@ app.get("/predict", auth, async (req, res) => {
   res.json({ predictedPrice: Math.round(prediction) });
 });
 
-app.listen(3000, () => console.log("Server running on port 3000"));
+app.listen(PORT, () => console.log("Server running"));
