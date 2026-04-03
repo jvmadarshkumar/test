@@ -6,22 +6,42 @@
 </head>
 <body>
 
-<h2>Market Dashboard</h2>
+<h2>📊 Market Dashboard</h2>
 
+<!-- ➕ ADD PRODUCT -->
 <div>
   <input id="name" placeholder="Product Name">
-  <input id="price" placeholder="Price">
+  <input id="price" type="number" placeholder="Price">
   <input id="category" placeholder="Category">
-  <button onclick="addProduct()">Add</button>
+  <button onclick="addProduct()">Add Product</button>
 </div>
 
-<button onclick="loadData()">Load Data</button>
+<br>
 
+<!-- 📊 ACTION BUTTONS -->
+<div>
+  <button onclick="loadData()">Load Data</button>
+  <button onclick="predictPrice()">Predict Price</button>
+</div>
+
+<br>
+
+<!-- 📦 PRODUCT LIST -->
+<h3>Products:</h3>
 <ul id="list"></ul>
 
-<button onclick="predict()">Predict Price</button>
+<br>
+
+<!-- 🤖 PREDICTION -->
+<h3>Predicted Price:</h3>
 <p id="prediction"></p>
 
-<script src="script.js"></script>
+<br>
+
+<!-- 🔐 LOGOUT -->
+<button onclick="logout()">Logout</button>
+
+<script src="dashboard.js"></script>
+
 </body>
 </html>
