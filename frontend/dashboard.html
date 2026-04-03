@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Market Dashboard</h2>
+
+<div>
+  <input id="name" placeholder="Product Name">
+  <input id="price" placeholder="Price">
+  <input id="category" placeholder="Category">
+  <button onclick="addProduct()">Add</button>
+</div>
+
+<button onclick="loadData()">Load Data</button>
+
+<ul id="list"></ul>
+
+<button onclick="predict()">Predict Price</button>
+<p id="prediction"></p>
+
+<script src="script.js"></script>
+</body>
+</html>
